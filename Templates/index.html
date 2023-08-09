@@ -175,6 +175,9 @@
               <h4>{{feature.name}}</h4>
               <p>{{feature.details}}</p>
             </div>
+            {% if feature.name == 'fast delivery service' %}
+            <p>This feature says our site has a fast delivery service</p>
+            {% endif %}
           </div>
           {% endfor %}
 
