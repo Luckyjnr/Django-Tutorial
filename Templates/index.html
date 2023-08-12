@@ -107,12 +107,22 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
+          {% if user.is_authenticated %}
+          <h1>Welcome, <span>{{user.username}}</span></h1>
+          <h2>Delivering great food for more than 18 years!</h2>
+          {% else %}
           <h1>Welcome to <span>Restaurantly</span></h1>
           <h2>Delivering great food for more than 18 years!</h2>
+          {% endif %}
 
           <div class="btns">
+            {% if user.is_authenticated %}
+            <a href="" class="btn-menu animated fadeInUp scrollto">Logout</a>
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
             <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+            {% else %}
+            <a href="login.html" class="btn-menu animated fadeInUp scrollto">login or signup</a>
+            {% endif %}
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
